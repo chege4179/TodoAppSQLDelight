@@ -10,11 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up JDK
+      - name: set up JDK
         uses: actions/setup-java@v3
         with:
+          distribution: 'zulu'
           java-version: 17
 
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-home-cache-cleanup: true
 
 
       - name: Assemble Debug APK
