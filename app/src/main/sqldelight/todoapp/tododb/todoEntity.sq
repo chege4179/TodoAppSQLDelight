@@ -22,3 +22,7 @@ VALUES (?,?,?,?);
 deleteTodoById:
 DELETE FROM todoEntity
 WHERE todoId = :todoId;
+
+updateTodoStatus:
+UPDATE todoEntity
+SET isDone = :isDone WHERE todoId = :todoId;
