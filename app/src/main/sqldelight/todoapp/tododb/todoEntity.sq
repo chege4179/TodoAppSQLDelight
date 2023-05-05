@@ -1,0 +1,24 @@
+CREATE TABLE todoEntity (
+    todoId INTEGER NOT NULL PRIMARY KEY,
+    todoName TEXT NOT NULL,
+    todoDescription TEXT NOT NULL,
+    isDone TEXT NOT NULL
+);
+
+getTodoById:
+ SELECT *
+ FROM todoEntity
+ WHERE todoId = :todoId;
+
+getAllTodos:
+ SELECT * FROM todoEntity;
+
+insertTodo:
+INSERT OR REPLACE
+INTO todoEntity
+VALUES (?,?,?,?);
+
+
+deleteTodoById:
+DELETE FROM todoEntity
+WHERE todoId = :todoId;
